@@ -143,7 +143,7 @@ This object could be useful if we are often looking up people by their unique ID
 
 Write a function called `peopleById` that takes an array of people and returns an object where each person is keyed by their unique ID.
 
-You have just created what we call an *index*, not unlike the one you have in your phonebook.
+You have effectively created what we call an *index*, not unlike the one you have in your phonebook.
 
 ## Exercise 10
 Expanding on the previous exercise, this time we are going to create an index on **first names**. Notice how in the previous exercise, each ID was unique. In this case, two people have the same first name.
@@ -176,6 +176,8 @@ We want to create a function called `peopleByFirstName` that will take an array 
   ]
 }
 ```
+
+You have effectively created an *index on first name*. This lets you find all people called, say, "John" without having to look through the whole results.
 
 ## Exercise 11
 Start or continue the activity [Functional programming in JavaScript](http://reactivex.io/learnrx/).
