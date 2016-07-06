@@ -2,6 +2,12 @@
 
 As a reference throughout this workshop, make sure to use [the MDN documentation for `Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
+If you prefer videos, here's a series of videos explaining filter/map/reduce:
+
+* Filter: https://www.youtube.com/watch?v=BMUiFMZr7vk
+* Map: https://www.youtube.com/watch?v=bCqtb-Z5YGQ
+* Reduce: https://www.youtube.com/watch?v=Wl98eZpkp-c
+
 ## Operational instructions
 Fork this repository to your own GitHub and clone your fork in your work environment.
 
@@ -14,10 +20,13 @@ After each exercise make sure to commit/push this way we can monitor your progre
 **NOTE**: You don't need to reset your `answers.js` file. Keep growing the file with each exercise, and make sure to add a comment so we know which exercise we are looking at.
 
 ## Exercise 1
-Write a function called `printPositives` that takes an array and uses its `forEach` method to **print** only the positive numbers.
+Write a function called `printPositives` that takes an array and uses the `forEach` method to **print** only the positive numbers.
 
 ## Exercise 2
-Similar to the previous exercise, write a function called `getPositives` that takes an array and uses its `filter` method to **return a new array** with only the positive numbers
+Similar to the previous exercise, write a function called `getPositives` that takes an array and uses the `filter` method to **return a new array** with only the positive numbers.
+
+## Exercise 2B
+Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: `return arr.filter(...).forEach(...)
 
 ## Exercise 3
 Write a function called `filterArray` that takes an array AND a function as arguments. Your `filter` function should return a new array that contains only the elements where the passed function returns a truthy value.
