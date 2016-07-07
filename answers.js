@@ -45,7 +45,7 @@ Re-do exercise 1 by first filtering the input array, and then printing the numbe
 filtered array. 
 
 Your code will look something like: `return arr.filter(...).forEach(...)*/
-
+/*
 function printPositive3(array) {
     return array.filter(function(element){
         if (element > 0) {
@@ -57,3 +57,27 @@ function printPositive3(array) {
 }
 
 printPositive3([3, -8, 7,-5,22]);
+*/
+
+
+
+
+
+
+/*## Exercise 3
+Write a function called `filterArray` that takes an array AND a function as arguments. Your 
+`filter` function should return a new array that contains only the elements where the passed 
+function returns a truthy value.*/
+
+
+function filterArray(array, aFunction) {
+    return array.filter(function(aFunction){
+    })
+}
+
+
+
+/*## Exercise 4
+Write a function called `longestWord` that takes a string as argument, and returns the longest word 
+in the string. You should use `Array.prototype.reduce` to do your work.*/
+
