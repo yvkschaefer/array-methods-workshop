@@ -69,15 +69,29 @@ Write a function called `filterArray` that takes an array AND a function as argu
 `filter` function should return a new array that contains only the elements where the passed 
 function returns a truthy value.*/
 
-
+/*
 function filterArray(array, aFunction) {
     return array.filter(function(aFunction){
     })
 }
-
+*/
 
 
 /*## Exercise 4
 Write a function called `longestWord` that takes a string as argument, and returns the longest word 
 in the string. You should use `Array.prototype.reduce` to do your work.*/
 
+function longestWord(string){
+    var array = string.split(' ');
+    return array.reduce(function(a, b){
+        if (a.length > b.length){
+            return a;
+        }
+        else {
+            return b
+        }
+    })
+}
+
+console.log(longestWord('Hello which one of me willbethe longest word?'));
+console.log(longestWord('abcdefghijklmno is bigger'));
