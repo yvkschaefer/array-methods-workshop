@@ -81,6 +81,8 @@ function filterArray(array, aFunction) {
 Write a function called `longestWord` that takes a string as argument, and returns the longest word 
 in the string. You should use `Array.prototype.reduce` to do your work.*/
 
+//I didn't use Array.prototype.reduce, Codrin seems to think it's k
+/*
 function longestWord(string){
     var array = string.split(' ');
     return array.reduce(function(a, b){
@@ -95,3 +97,34 @@ function longestWord(string){
 
 console.log(longestWord('Hello which one of me willbethe longest word?'));
 console.log(longestWord('abcdefghijklmno is bigger'));
+*/
+
+
+
+
+
+
+/*## Exercise 5
+Write a function called `countVowels` that takes a string and returns the number of vowels in the 
+string. You should use `Array.prototype.reduce` to do your work.
+
+**Hint**: You can use `String.prototype.split` again. There is a way to use it to split a string 
+by character. Try to Google it :)
+
+**Hint 2**: You can create an array of vowels and use `Array.prototype.indexOf` to check if the 
+current letter is a vowel.
+*/
+
+var vowels = ['a','e','o','u','i', 'y'];
+
+function countVowels(string){
+    var array = string.split('');
+    return array.reduce(function(counter, char){
+        if (vowels.indexOf(char) > -1){
+            counter = counter + 1;
+        }
+        return counter;
+    },0);
+}
+
+console.log(countVowels('the quick brown fox'));//5
