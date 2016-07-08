@@ -114,17 +114,51 @@ by character. Try to Google it :)
 **Hint 2**: You can create an array of vowels and use `Array.prototype.indexOf` to check if the 
 current letter is a vowel.
 */
-
+/*
 var vowels = ['a','e','o','u','i', 'y'];
 
 function countVowels(string){
     var array = string.split('');
     return array.reduce(function(counter, char){
-        if (vowels.indexOf(char) > -1){
-            counter = counter + 1;
+        if (vowels.indexOf(char) > -1){//anytime there is a vowel, it's index position is greater than -1
+            counter = counter + 1; //so let's count it +1 and add each vowel to our counter
         }
         return counter;
     },0);
 }
 
 console.log(countVowels('the quick brown fox'));//5
+*/
+
+
+
+
+
+
+
+/*## Exercise 6
+Write a function called `highLow` that takes an array of numbers, and returns an object with a 
+property `highest` containing the highest number, and a property `lowest` containing the lowest 
+number, using `Array.prototype.reduce`.
+
+For example, starting with `[1, -10, 20, 40, 5]`, your function should return `{highest: 40, 
+lowest: -10}`.
+
+**Hint**: Javascript has a special value called `Infinity`, which is higher than any other number. 
+See if you can initialize your reduce accumulator with `Infinity` and `-Infinity` :)*/
+
+
+function highLow(arrayOfNumbers){
+    return arrayOfNumbers.reduce(function(a,b){
+       if (a.highest < b){ //then b should replace -Infinity aka a.highest at the start
+           a.highest = b;
+       }
+       if (a.lowest > b){ //then b should be replacing Infinity
+         a.lowest = b;
+       }
+       return a;
+    } , {highest: -Infinity, lowest: Infinity});//this initializer = a at start
+    
+};
+
+console.log(highLow([-494,344,25,234,-9]));
