@@ -135,8 +135,8 @@ console.log(countVowels('the quick brown fox'));//5
 
 
 
-
-/*## Exercise 6
+/*
+## Exercise 6
 Write a function called `highLow` that takes an array of numbers, and returns an object with a 
 property `highest` containing the highest number, and a property `lowest` containing the lowest 
 number, using `Array.prototype.reduce`.
@@ -146,8 +146,7 @@ lowest: -10}`.
 
 **Hint**: Javascript has a special value called `Infinity`, which is higher than any other number. 
 See if you can initialize your reduce accumulator with `Infinity` and `-Infinity` :)*/
-
-
+/*
 function highLow(arrayOfNumbers){
     return arrayOfNumbers.reduce(function(a,b){
        if (a.highest < b){ //then b should replace -Infinity aka a.highest at the start
@@ -162,3 +161,54 @@ function highLow(arrayOfNumbers){
 };
 
 console.log(highLow([-494,344,25,234,-9]));
+*/
+
+
+
+
+
+/*## Exercise 7
+Expanding on exercise 6, write a function called `highLowTwo` that takes an array of numbers, and 
+returns the higest, second highest, lowest, and second lowest numbers.
+
+For example, starting with `[1, -10, 20, 40, 5]`, your function should return:
+
+```json
+{
+  "highest": 40,
+  "secondHighest": 20,
+  "lowest": -10,
+  "secondLowest": 5
+}
+```
+*/
+
+
+function highLowTwo(array){
+ return array.reduce(function(init,currentNum){
+       if (currentNum > init.highest) {
+           init.secondHighest = init.highest;
+           init.highest = currentNum;
+       }
+       if (currentNum < init.highest && currentNum > init.secondHighest){
+            init.secondHighest = currentNum;   
+       }
+       if (currentNum < init.lowest) {
+           init.secondLowest = init.lowest;
+           init.lowest = currentNum;
+       }
+       if (currentNum > init.lowest && currentNum < init.secondLowest){
+            init.secondLowest = currentNum;   
+       }
+       return init;
+    } , {
+            highest: -Infinity,
+            lowest: Infinity,
+            secondHighest: -Infinity,
+            secondLowest: Infinity,
+        });
+    
+};
+
+console.log(highLowTwo([-10,5,17,-6]));//1:17, 2:5, 3:-6, 4:-10
+
